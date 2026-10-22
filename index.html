@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101827">
+<title>BoardPilot — CBSE + VITEEE 2027</title>
+<style>
+:root{--bg:#0b1120;--panel:#121b2d;--panel2:#172238;--line:#26344d;--text:#eef4ff;--muted:#9eacc5;--blue:#7aa7ff;--cyan:#67e8d3;--yellow:#ffd479;--red:#ff8e9b;--green:#8be0ad}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% -10%,#20355e 0,transparent 32%),var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+button,input,select{font:inherit}button{cursor:pointer;border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:10px;padding:10px 13px}button:hover{border-color:var(--blue)}button.primary{background:var(--blue);color:#0a1325;border-color:var(--blue);font-weight:750}button.ghost{background:transparent}.shell{max-width:1250px;margin:auto;padding:22px}.top{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:22px}.brand{display:flex;gap:12px;align-items:center}.logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;color:#081326;font-weight:900;font-size:20px}.brand h1{font-size:20px;margin:0}.brand p{margin:2px 0 0;color:var(--muted);font-size:12px}.pill{border:1px solid var(--line);border-radius:999px;padding:7px 11px;color:var(--muted);font-size:12px}.hero{display:grid;grid-template-columns:1.5fr .8fr;gap:16px;margin-bottom:18px}.card{background:linear-gradient(180deg,rgba(22,33,54,.96),rgba(16,26,44,.96));border:1px solid var(--line);border-radius:18px;padding:20px;min-width:0}.eyebrow{text-transform:uppercase;letter-spacing:.14em;color:var(--cyan);font-size:11px;font-weight:800}.hero h2{font-size:clamp(25px,4vw,40px);line-height:1.1;margin:10px 0}.hero p{color:var(--muted);max-width:680px}.statgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}.stat{background:#0d1627;border:1px solid var(--line);padding:12px;border-radius:12px}.stat strong{display:block;font-size:22px}.stat span{font-size:11px;color:var(--muted)}.progress{height:8px;background:#27334a;border-radius:99px;overflow:hidden;margin-top:8px}.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:99px;transition:width .2s}.weekfocus{display:flex;flex-direction:column;gap:12px}.weekfocus h3{margin:4px 0;font-size:18px}.focusline{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:13px}.nav{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.nav button.active{background:var(--blue);color:#091326;border-color:var(--blue);font-weight:750}.view{display:none}.view.active{display:block}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:10px 0 16px}.sectionhead h2{margin:0;font-size:24px}.sectionhead p{margin:4px 0 0;color:var(--muted)}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:15px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.subject{border-top:3px solid var(--accent)}.subject h3{margin:0 0 5px}.subject small,.muted{color:var(--muted)}.chapterlist{display:grid;gap:8px;margin-top:14px}.chapter{display:flex;align-items:flex-start;gap:10px;padding:10px;border-radius:10px;background:#0c1525;border:1px solid #22304a}.chapter input{margin-top:5px;accent-color:var(--cyan);width:16px;height:16px}.chapter label{flex:1;cursor:pointer}.chapter label strong{display:block;font-size:13px}.chapter label span{font-size:11px;color:var(--muted)}.badge{font-size:10px;padding:3px 7px;border-radius:999px;background:#253552;color:#c6d7ff;white-space:nowrap}.badge.high{background:#493323;color:#ffda9a}.badge.done{background:#163d36;color:var(--green)}.tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.weekgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.day{border:1px solid var(--line);background:#0e1728;border-radius:14px;padding:14px}.daytop{display:flex;justify-content:space-between;gap:8px;align-items:center}.day h3{margin:0;font-size:15px}.day ul{padding-left:18px;margin:10px 0;color:#c6d2e7;font-size:13px}.day li{margin:5px 0}.day input[type=checkbox]{accent-color:var(--cyan)}.testlayout{display:grid;grid-template-columns:.85fr 1.15fr;gap:15px}.field{display:grid;gap:6px;margin:12px 0}.field label{font-size:12px;color:var(--muted)}select,input[type=text],input[type=number],input[type=date]{background:#0b1424;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px;width:100%}.question{border:1px solid var(--line);background:#0d1627;padding:15px;border-radius:13px;margin-bottom:10px}.question p{margin:0 0 12px;font-weight:650}.options{display:grid;gap:7px}.option{display:flex;gap:9px;align-items:flex-start;padding:8px;border-radius:8px;background:#152137;cursor:pointer;font-size:13px}.option input{margin-top:4px;accent-color:var(--blue)}.result{padding:14px;border-radius:12px;background:#122a2b;border:1px solid #24534c;margin-top:12px}.result strong{font-size:24px}.hidden{display:none!important}.history{width:100%;border-collapse:collapse;font-size:13px}.history th,.history td{text-align:left;padding:10px;border-bottom:1px solid var(--line)}.history th{color:var(--muted);font-weight:600}.empty{color:var(--muted);text-align:center;padding:24px}.foot{color:var(--muted);font-size:12px;text-align:center;padding:24px 0 8px}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#e5f3ff;color:#102039;padding:11px 16px;border-radius:10px;box-shadow:0 10px 40px #0007;z-index:10;font-weight:650}.todaytag{color:var(--yellow);font-size:12px}
+@media(max-width:800px){.shell{padding:14px}.hero,.grid2,.testlayout{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}.weekgrid{grid-template-columns:1fr}.top{align-items:flex-start}.pill{display:none}.stat strong{font-size:18px}.sectionhead{align-items:flex-start;flex-direction:column}}
+@media print{body{background:white;color:#111}.top,.nav,.tools,button{display:none!important}.card,.day,.chapter,.question{background:white;color:#111;border-color:#aaa;break-inside:avoid}.muted,.subject small,.chapter label span{color:#555}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="top">
+ <div class="brand"><div class="logo">B</div><div><h1>BoardPilot</h1><p>CBSE Class 12 + VITEEE 2027 planner</p></div></div>
+ <div class="pill">PERSONAL PLAN · PCM · 4–6 HOURS/DAY</div>
+</header>
+<section class="hero">
+ <div class="card">
+  <div class="eyebrow">Your study command centre</div>
+  <h2>Small daily wins.<br><span style="color:var(--blue)">Big exam confidence.</span></h2>
+  <p>Track chapters, follow the weekly plan, and take built-in practice tests. Designed for a student who has studied some chapters and is targeting CBSE board improvement plus VIT Vellore CSE / AI.</p>
+  <div class="statgrid">
+   <div class="stat"><strong id="chapterStat">0%</strong><span>Chapter checklist</span></div>
+   <div class="stat"><strong id="testStat">0</strong><span>Tests completed</span></div>
+   <div class="stat"><strong id="streakStat">0/7</strong><span>This week's tasks</span></div>
+  </div>
+ </div>
+ <div class="card weekfocus">
+  <div class="eyebrow">This week's focus</div>
+  <h3 id="weekTitle">Foundation & diagnosis</h3>
+  <p class="muted" id="weekDescription">Find gaps, revise core concepts, and begin timed MCQs.</p>
+  <div class="focusline"><span>Daily study target</span><strong>5 hours</strong></div>
+  <div class="focusline"><span>Board practice</span><strong>Written answers</strong></div>
+  <div class="focusline"><span>VITEEE practice</span><strong>30–45 min/day</strong></div>
+  <div class="progress"><i id="weekProgress"></i></div>
+  <div class="focusline"><span id="weekProgressText">0 of 7 weekly tasks done</span><span class="todaytag">Week 1</span></div>
+  <button class="primary" onclick="showView('weekly')">Open weekly plan →</button>
+ </div>
+</section>
+<nav class="nav">
+ <button class="active" data-view="dashboard" onclick="showView('dashboard')">Overview</button>
+ <button data-view="chapters" onclick="showView('chapters')">Chapter tracker</button>
+ <button data-view="weekly" onclick="showView('weekly')">Weekly plan</button>
+ <button data-view="tests" onclick="showView('tests')">Weekly tests</button>
+ <button data-view="progress" onclick="showView('progress')">My progress</button>
+</nav>
+
+<section class="view active" id="dashboard">
+ <div class="sectionhead"><div><h2>Your next actions</h2><p>Start with these steps, then repeat the weekly cycle.</p></div><button class="ghost" onclick="window.print()">Print overview</button></div>
+ <div class="grid3">
+  <div class="card"><div class="eyebrow">01 · Diagnose</div><h3>Find your weak chapters</h3><p class="muted">Tick completed chapters honestly. Use the test section to check what you can solve without notes.</p><button onclick="showView('chapters')">Track chapters</button></div>
+  <div class="card"><div class="eyebrow">02 · Practise</div><h3>Learn by answering</h3><p class="muted">Study a concept, close the book, solve questions, and write down every mistake.</p><button onclick="showView('tests')">Take a test</button></div>
+  <div class="card"><div class="eyebrow">03 · Review</div><h3>Sunday review</h3><p class="muted">Review scores, repeat wrong questions, and plan the next week's priorities.</p><button onclick="showView('progress')">View progress</button></div>
+ </div>
+ <div class="sectionhead"><div><h2>Daily timetable</h2><p>Five focused hours outside school; shift times around your school schedule.</p></div></div>
+ <div class="grid2">
+  <div class="card"><h3>Study blocks</h3>
+   <div class="focusline"><span>Physics · concepts + numericals</span><strong>75 min</strong></div><div class="focusline"><span>Chemistry · NCERT + reactions</span><strong>60 min</strong></div><div class="focusline"><span>Mathematics · problem solving</span><strong>75 min</strong></div><div class="focusline"><span>VITEEE · timed MCQs</span><strong>45 min</strong></div><div class="focusline"><span>Recall + error notebook</span><strong>45 min</strong></div>
+  </div>
+  <div class="card"><h3>Rules that protect your marks</h3><ul class="muted"><li>Use the current CBSE and VITEEE syllabi to confirm every chapter.</li><li>Write answers, don't only read them.</li><li>Keep an error notebook and retry missed questions after 1 day and 1 week.</li><li>During board exam weeks, boards take priority.</li><li>Use official VIT counselling; never pay agents promising a guaranteed seat.</li></ul></div>
+ </div>
+</section>
+
+<section class="view" id="chapters">
+ <div class="sectionhead"><div><h2>Chapter tracker</h2><p>Preloaded with core Class 12 PCM topics. Tick a chapter when you can solve questions without help.</p></div><div class="tools"><button onclick="markSubject('all',true)">Mark all done</button><button onclick="resetChapters()">Reset checklist</button></div></div>
+ <div class="grid2" id="subjects"></div>
+ <p class="muted">Priority labels are planning suggestions, not guaranteed exam weightage. Verify the current syllabus before studying.</p>
+</section>
+
+<section class="view" id="weekly">
+ <div class="sectionhead"><div><h2>Weekly plan</h2><p>Use the first week as a diagnostic week. Repeat the pattern with new chapters each week.</p></div><button class="ghost" onclick="window.print()">Print weekly plan</button></div>
+ <div class="card" style="margin-bottom:14px"><div class="field"><label for="weekSelect">Choose plan week</label><select id="weekSelect" onchange="renderWeek()">
+ <option value="1">Week 1 · Diagnose & foundation</option><option value="2">Week 2 · Core concepts</option><option value="3">Week 3 · Practice and recall</option><option value="4">Week 4 · First review cycle</option><option value="5">Week 5 · Syllabus coverage</option><option value="6">Week 6 · Competency questions</option><option value="7">Week 7 · Timed practice</option><option value="8">Week 8 · Consolidation</option>
+ </select></div><p class="muted">Your saved checkboxes update the progress dashboard. Once Week 8 is complete, repeat the cycle with the next chapters.</p></div>
+ <div id="weekDays" class="weekgrid"></div>
+</section>
+
+<section class="view" id="tests">
+ <div class="sectionhead"><div><h2>Weekly tests</h2><p>Built-in quick tests with instant marking and a saved score history. Use them as practice, not as an official exam predictor.</p></div></div>
+ <div class="testlayout">
+  <div class="card">
+   <h3>Build your test</h3>
+   <div class="field"><label for="testSubject">Subject</label><select id="testSubject" onchange="loadTest()"><option value="Physics">Physics</option><option value="Chemistry">Chemistry</option><option value="Mathematics">Mathematics</option><option value="Mixed">Mixed PCM</option></select></div>
+   <div class="field"><label for="testLength">Number of questions</label><select id="testLength" onchange="loadTest()"><option value="5">5 questions · quick</option><option value="10">10 questions · standard</option></select></div>
+   <div class="field"><label for="testName">Test label (optional)</label><input id="testName" type="text" placeholder="e.g. Week 1 Physics revision"></div>
+   <button class="primary" style="width:100%" onclick="loadTest(true)">Start / restart test</button>
+   <p class="muted" style="font-size:12px">Questions are a starter bank of practice MCQs. For full exam preparation, also use NCERT, CBSE sample papers and a current VITEEE mock source.</p>
+  </div>
+  <div class="card">
+   <div class="focusline"><span id="testHeading">Physics practice</span><span id="questionCount">5 questions</span></div>
+   <div id="quiz"><div class="empty">Choose a subject and press “Start / restart test”.</div></div>
+   <div class="tools"><button class="primary" id="submitTest" onclick="submitTest()" disabled>Submit answers</button><button onclick="clearAnswers()">Clear answers</button></div>
+   <div id="testResult"></div>
+  </div>
+ </div>
+</section>
+
+<section class="view" id="progress">
+ <div class="sectionhead"><div><h2>My progress</h2><p>Your progress is stored in this browser on this device.</p></div><div class="tools"><button onclick="exportData()">Export data</button><button onclick="clearHistory()">Clear test history</button></div></div>
+ <div class="grid3" style="margin-bottom:14px">
+  <div class="card"><div class="eyebrow">Chapters</div><h2 id="progressChapters">0/0</h2><div class="progress"><i id="chapterBar"></i></div></div>
+  <div class="card"><div class="eyebrow">Average score</div><h2 id="averageScore">—</h2><p class="muted">Across saved tests</p></div>
+  <div class="card"><div class="eyebrow">Best score</div><h2 id="bestScore">—</h2><p class="muted">Across saved tests</p></div>
+ </div>
+ <div class="card"><h3>Test history</h3><div id="history"></div></div>
+ <div class="card" style="margin-top:14px"><h3>Admission checklist</h3><div id="admissionChecklist" class="chapterlist"></div><p class="muted">Always verify current dates, eligibility, fee categories and scholarship rules on the official VIT website.</p><div class="tools"><a href="https://viteee.vit.ac.in/" target="_blank" rel="noopener" style="color:var(--blue)">VITEEE official website ↗</a><a href="https://cbseacademic.nic.in/" target="_blank" rel="noopener" style="color:var(--blue)">CBSE Academic ↗</a><a href="https://vit.ac.in/admission/ug/fee-structure" target="_blank" rel="noopener" style="color:var(--blue)">VIT fee structure ↗</a></div></div>
+</section>
+<div class="foot">BoardPilot is a personal study planner, not an official CBSE or VIT product. Your checklist and scores stay in your browser unless you export them.</div>
+</div>
+<div id="toast" class="toast hidden" role="status"></div>
+<script>
+const chapterData = [
+ {subject:"Physics",color:"#7aa7ff",items:[
+ ["Electric Charges and Fields","High"],["Electrostatic Potential and Capacitance","High"],["Current Electricity","High"],["Moving Charges and Magnetism","High"],["Magnetism and Matter","Medium"],["Electromagnetic Induction","High"],["Alternating Current","High"],["Electromagnetic Waves","Medium"],["Ray Optics and Optical Instruments","High"],["Wave Optics","High"],["Dual Nature of Radiation and Matter","High"],["Atoms","Medium"],["Nuclei","Medium"],["Semiconductor Electronics","High"]]},
+ {subject:"Chemistry",color:"#67e8d3",items:[
+ ["Solutions","High"],["Electrochemistry","High"],["Chemical Kinetics","High"],["The d- and f-Block Elements","Medium"],["Coordination Compounds","High"],["Haloalkanes and Haloarenes","High"],["Alcohols, Phenols and Ethers","High"],["Aldehydes, Ketones and Carboxylic Acids","High"],["Amines","High"],["Biomolecules","Medium"]]},
+ {subject:"Mathematics",color:"#ffd479",items:[
+ ["Relations and Functions","Medium"],["Inverse Trigonometric Functions","Medium"],["Matrices","High"],["Determinants","High"],["Continuity and Differentiability","High"],["Applications of Derivatives","High"],["Integrals","High"],["Applications of Integrals","Medium"],["Differential Equations","High"],["Vector Algebra","High"],["Three-Dimensional Geometry","High"],["Linear Programming","Medium"],["Probability","High"]]}
+];
+const weeklyPlans = {
+1:{title:"Foundation & diagnosis",desc:"Find gaps, revise core concepts, and begin timed MCQs.",days:[
+["Monday","Diagnostic test in PCM","Physics: electrostatics basics","Record weak concepts"],
+["Tuesday","Chemistry: Solutions","NCERT examples + 10 MCQs","Recall formulas without notes"],
+["Wednesday","Mathematics: Matrices","Solve 15 board-style questions","Review each wrong answer"],
+["Thursday","Physics: Current Electricity","Numericals + formula sheet","10 timed VITEEE MCQs"],
+["Friday","Chemistry: organic reaction recall","Write reactions from memory","English/aptitude mini practice"],
+["Saturday","One timed subject section","Check answers with solutions","Update error notebook"],
+["Sunday","30–45 minute mixed PCM test","Retry all wrong questions","Plan next week's chapters"]]},
+2:{title:"Core concepts",desc:"Build reliable understanding in one chapter per subject.",days:[
+["Monday","Physics: electrostatics practice","Derivations and numericals","10 MCQs"],
+["Tuesday","Chemistry: Electrochemistry","NCERT concepts + calculations","Reaction/formula recall"],
+["Wednesday","Mathematics: Determinants","Board questions + MCQs","Correct errors"],
+["Thursday","Physics: Moving Charges","Concept questions","Timed practice"],
+["Friday","Chemistry: Chemical Kinetics","Graphs, formulas, numericals","English/aptitude"],
+["Saturday","Subject test","Analyse weak areas","Revise formulas"],
+["Sunday","Weekly mixed quiz","Retry missed questions","Plan next week"]]},
+3:{title:"Practice and recall",desc:"Strengthen memory through written answers and spaced repetition.",days:[
+["Monday","Physics: EMI and AC","Derivations and numericals","Timed MCQs"],
+["Tuesday","Chemistry: Coordination Compounds","Naming, concepts, NCERT questions","Recall key facts"],
+["Wednesday","Mathematics: Differentiation","Question set under time limit","Correct mistakes"],
+["Thursday","Physics: Ray Optics","Diagrams and numericals","VITEEE MCQs"],
+["Friday","Chemistry: Haloalkanes/Haloarenes","Reactions and conversions","Aptitude/English"],
+["Saturday","Timed board-style section","Mark using a scheme","List lost marks"],
+["Sunday","Mixed PCM quiz","Repeat old errors","Plan next week"]]},
+4:{title:"First review cycle",desc:"Review completed chapters and close the biggest gaps.",days:[
+["Monday","Revise Physics formula sheets","Solve old wrong questions","Mini quiz"],
+["Tuesday","Revise Chemistry reactions","NCERT line-by-line recall","MCQs"],
+["Wednesday","Revise Mathematics methods","Mixed chapter problems","Error review"],
+["Thursday","Physics: Wave Optics / Dual Nature","Concepts and numericals","Timed MCQs"],
+["Friday","Chemistry: Amines / Biomolecules","Reactions and textbook questions","Aptitude/English"],
+["Saturday","Full subject paper","Check every step","Repair weak areas"],
+["Sunday","Review all test history","Repeat questions missed twice","Plan next cycle"]]},
+5:{title:"Syllabus coverage",desc:"Move to the next unfinished chapters; keep old topics alive.",days:[
+["Monday","Physics: Atoms and Nuclei","Numericals and concepts","Formula recall"],
+["Tuesday","Chemistry: remaining prescribed chapters","NCERT questions","MCQs"],
+["Wednesday","Mathematics: Integrals","Standard methods and practice","Timed set"],
+["Thursday","Physics: Semiconductor Electronics","Diagrams and key concepts","MCQs"],
+["Friday","Chemistry: Biomolecules / revision","Textbook recall","English/aptitude"],
+["Saturday","Mixed board question set","Mark and analyse","Update tracker"],
+["Sunday","Mixed PCM test","Spaced repetition","Plan next cycle"]]},
+6:{title:"Competency questions",desc:"Practise case-based, application-based and multi-step questions.",days:[
+["Monday","Physics case-based questions","Explain reasoning","Correct errors"],
+["Tuesday","Chemistry application questions","Numerical + conceptual MCQs","Recall reactions"],
+["Wednesday","Mathematics multi-step problems","Timed set","Review methods"],
+["Thursday","Mixed VITEEE practice","Work on speed and accuracy","Review guesses"],
+["Friday","Board long-answer writing","Presentation and units","Revise definitions"],
+["Saturday","Timed sample-paper section","Use marking scheme","List lost marks"],
+["Sunday","Weekly review","Retry wrong questions","Plan next cycle"]]},
+7:{title:"Timed practice",desc:"Improve pace without sacrificing accuracy.",days:[
+["Monday","Physics timed section","Check time per question","Review"],
+["Tuesday","Chemistry timed section","Avoid blind guessing","Review"],
+["Wednesday","Mathematics timed section","Prioritise solvable questions","Review"],
+["Thursday","Mixed VITEEE test","Practise skipping and returning","Analyse accuracy"],
+["Friday","Weak-chapter repair","Target recurring errors","Recall formulas"],
+["Saturday","Full or half-length mock","Careful review","Update score"],
+["Sunday","Rest + light revision","Formula/reaction flash review","Plan next week"]]},
+8:{title:"Consolidation",desc:"Review, test, and repeat the cycle with unfinished chapters.",days:[
+["Monday","Physics revision set","Old mistakes","Short test"],
+["Tuesday","Chemistry revision set","NCERT recall","Short test"],
+["Wednesday","Mathematics revision set","Mixed questions","Short test"],
+["Thursday","VITEEE mixed practice","Accuracy review","English/aptitude"],
+["Friday","Board answer writing","Check presentation","Formula recall"],
+["Saturday","Timed mock","Analyse each error","Set new targets"],
+["Sunday","Weekly reflection","Select next unfinished chapters","Repeat cycle"]]}
+};
+const bank = [
+{subject:"Physics",q:"Two point charges +q and +q are separated by distance r. The magnitude of force between them is proportional to:",o:["r","1/r","1/r²","r²"],a:2,e:"Coulomb's law gives F ∝ 1/r²."},
+{subject:"Physics",q:"The SI unit of electric potential is:",o:["Coulomb","Volt","Farad","Ohm"],a:1,e:"Electric potential is measured in volts (J/C)."},
+{subject:"Physics",q:"For an ohmic conductor at constant temperature, the V–I graph is:",o:["A circle","A straight line through the origin","A parabola","A horizontal line"],a:1,e:"Ohm's law V = IR gives a straight line through the origin."},
+{subject:"Physics",q:"The equivalent resistance of 2 Ω and 3 Ω connected in series is:",o:["1.2 Ω","5 Ω","6 Ω","2.5 Ω"],a:1,e:"Series resistances add: 2 + 3 = 5 Ω."},
+{subject:"Physics",q:"The SI unit of magnetic flux is:",o:["Tesla","Weber","Henry","Ampere"],a:1,e:"Magnetic flux is measured in weber (Wb)."},
+{subject:"Physics",q:"In a purely resistive AC circuit, voltage and current are:",o:["90° out of phase","In phase","180° out of phase","Unrelated"],a:1,e:"For a pure resistor, voltage and current are in phase."},
+{subject:"Physics",q:"The phenomenon that supports the particle nature of light is:",o:["Interference","Diffraction","Photoelectric effect","Polarisation"],a:2,e:"The photoelectric effect is evidence for quantised photons."},
+{subject:"Physics",q:"The number of protons in a nucleus is called its:",o:["Mass number","Atomic number","Neutron number","Isotope number"],a:1,e:"Atomic number Z equals the number of protons."},
+{subject:"Physics",q:"A convex lens has focal length +20 cm. Its power is:",o:["+0.2 D","+2 D","+5 D","−5 D"],a:2,e:"P = 1/f in metres = 1/0.20 = +5 dioptres."},
+{subject:"Physics",q:"A semiconductor diode ideally allows current mainly in:",o:["Both directions equally","Reverse bias only","Forward bias","Neither direction"],a:2,e:"A diode conducts strongly in forward bias."},
+{subject:"Chemistry",q:"For a dilute solution, the relative lowering of vapour pressure is equal to the mole fraction of:",o:["Solvent","Solute","Both equally","Neither"],a:1,e:"Raoult's law gives (p°−p)/p° = xsolute for a non-volatile solute."},
+{subject:"Chemistry",q:"The SI unit of molar conductivity is commonly expressed as:",o:["S m² mol⁻¹","S m⁻¹","mol L⁻¹","Ω m"],a:0,e:"Molar conductivity has units S m² mol⁻¹ in SI."},
+{subject:"Chemistry",q:"For a first-order reaction, the half-life is:",o:["Directly proportional to initial concentration","Independent of initial concentration","Always zero","Proportional to concentration squared"],a:1,e:"t½ = 0.693/k for a first-order reaction."},
+{subject:"Chemistry",q:"The coordination number of cobalt in [Co(NH₃)₆]³⁺ is:",o:["3","4","6","9"],a:2,e:"There are six monodentate NH₃ ligands."},
+{subject:"Chemistry",q:"Which reagent is commonly used to convert an alcohol to an aldehyde without extensive oxidation?",o:["PCC","NaOH(aq)","H₂/Ni","NaCl"],a:0,e:"PCC can oxidise a primary alcohol to an aldehyde under suitable conditions."},
+{subject:"Chemistry",q:"The functional group present in amines is derived from:",o:["Ammonia","Methane","Water","Carbon dioxide"],a:0,e:"Amines are derivatives of ammonia where one or more H atoms are replaced by organic groups."},
+{subject:"Chemistry",q:"The rate constant of a zero-order reaction has units of:",o:["s⁻¹","mol L⁻¹ s⁻¹","L mol⁻¹ s⁻¹","mol² L⁻²"],a:1,e:"Rate = k for zero order, so k has concentration/time units."},
+{subject:"Chemistry",q:"A ligand that binds through two donor atoms is called:",o:["Monodentate","Bidentate","Ambidentate only","Hexadentate"],a:1,e:"Bidentate ligands donate two pairs through two donor atoms."},
+{subject:"Chemistry",q:"The major intermolecular force between water molecules is:",o:["Metallic bonding","Hydrogen bonding","Ionic bonding","Covalent bonding between molecules"],a:1,e:"Water molecules form strong hydrogen bonds with one another."},
+{subject:"Chemistry",q:"Which compound is generally the most acidic?",o:["Ethanol","Phenol","Ethane","Ethene"],a:1,e:"Phenoxide ion is resonance-stabilised, making phenol more acidic than ethanol."},
+{subject:"Mathematics",q:"If A is a 2×3 matrix and B is a 3×4 matrix, the order of AB is:",o:["2×4","3×3","4×2","Not defined"],a:0,e:"The inner dimensions match; the product has outer dimensions 2×4."},
+{subject:"Mathematics",q:"The determinant of [[a,0],[0,b]] is:",o:["a+b","ab","a−b","0"],a:1,e:"The determinant is ad−bc = ab."},
+{subject:"Mathematics",q:"The derivative of sin x with respect to x is:",o:["−sin x","cos x","−cos x","tan x"],a:1,e:"d(sin x)/dx = cos x."},
+{subject:"Mathematics",q:"The derivative of x² is:",o:["x","2x","x²","2"],a:1,e:"By the power rule, d(x²)/dx = 2x."},
+{subject:"Mathematics",q:"∫ 1/x dx, for x ≠ 0, is:",o:["x²/2 + C","ln|x| + C","1/x² + C","eˣ + C"],a:1,e:"The integral of 1/x is ln|x| + C."},
+{subject:"Mathematics",q:"The magnitude of vector (3,4) is:",o:["3","4","5","7"],a:2,e:"Magnitude = √(3²+4²) = 5."},
+{subject:"Mathematics",q:"The probability of an impossible event is:",o:["0","1","−1","0.5"],a:0,e:"An impossible event has probability zero."},
+{subject:"Mathematics",q:"The slope of the line y = 3x + 2 is:",o:["2","3","−3","−2"],a:1,e:"In y = mx + c, the slope is m = 3."},
+{subject:"Mathematics",q:"If f'(x) > 0 throughout an interval, f is increasing on that interval (assuming differentiability).",o:["True","False","Only if f(x)=0","Cannot be stated"],a:0,e:"A positive derivative indicates an increasing function on the interval."},
+{subject:"Mathematics",q:"The dot product of perpendicular non-zero vectors is:",o:["1","−1","0","Their magnitudes multiplied"],a:2,e:"a·b = |a||b|cos 90° = 0."}
+];
+const admissionItems = [
+"Check VITEEE 2027 eligibility and the official prospectus.",
+"Complete application before the official deadline and save confirmation.",
+"Prepare PCM, English and aptitude according to the official syllabus.",
+"Check rank-based counselling instructions and choice filling.",
+"Compare tuition fee categories, hostel/mess and other costs.",
+"Check official scholarship eligibility and conditions.",
+"Pay only through official payment channels; avoid donation/agent promises."
+];
+const defaultState={chapters:{},weekChecks:{},history:[],admission:{}};
+let state=loadState(), currentQuestions=[], lastSubmitted=false;
+function loadState(){try{return {...defaultState,...JSON.parse(localStorage.getItem("boardpilotState")||"{}")}}catch(e){return {...defaultState}}}
+function save(){localStorage.setItem("boardpilotState",JSON.stringify(state));updateStats()}
+function toast(msg){const el=document.getElementById("toast");el.textContent=msg;el.classList.remove("hidden");setTimeout(()=>el.classList.add("hidden"),2100)}
+function showView(id){document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id===id));document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.view===id));if(id==="progress")renderProgress();if(id==="weekly")renderWeek();if(id==="tests"&&!currentQuestions.length)loadTest();window.scrollTo({top:0,behavior:"smooth"})}
+function renderChapters(){const root=document.getElementById("subjects");root.innerHTML="";chapterData.forEach(s=>{const done=s.items.filter(([name])=>state.chapters[s.subject+"|"+name]).length;const div=document.createElement("div");div.className="card subject";div.style.setProperty("--accent",s.color);div.innerHTML=`<div class="focusline"><h3>${s.subject}</h3><strong>${done}/${s.items.length}</strong></div><small>${Math.round(done/s.items.length*100)}% complete</small><div class="progress"><i style="width:${done/s.items.length*100}%"></i></div><div class="chapterlist">${s.items.map(([name,priority])=>{const key=s.subject+"|"+name,checked=!!state.chapters[key];return `<div class="chapter"><input type="checkbox" id="${escapeAttr(key)}" ${checked?"checked":""} onchange="toggleChapter('${escapeJS(key)}',this.checked)"><label for="${escapeAttr(key)}"><strong>${name}</strong><span>Study NCERT + board questions + MCQs</span></label><span class="badge ${checked?"done":priority==="High"?"high":""}">${checked?"Done":priority}</span></div>`}).join("")}</div>`;root.appendChild(div)})}
+function toggleChapter(key,val){state.chapters[key]=val;save();renderChapters()}
+function markSubject(which,val){chapterData.filter(s=>which==="all"||s.subject===which).forEach(s=>s.items.forEach(([name])=>state.chapters[s.subject+"|"+name]=val));save();renderChapters();toast(val?"Checklist marked done":"Checklist updated")}
+function resetChapters(){if(confirm("Reset all chapter ticks?")){state.chapters={};save();renderChapters();toast("Chapter checklist reset")}}
+function renderWeek(){const n=Number(document.getElementById("weekSelect").value),plan=weeklyPlans[n];document.getElementById("weekTitle").textContent=plan.title;document.getElementById("weekDescription").textContent=plan.desc;document.querySelector(".todaytag").textContent="Week "+n;const root=document.getElementById("weekDays");root.innerHTML="";plan.days.forEach((d,i)=>{const key=n+"|"+i,checked=!!state.weekChecks[key],div=document.createElement("div");div.className="day";div.innerHTML=`<div class="daytop"><h3>${d[0]}</h3><label class="muted" style="font-size:12px"><input type="checkbox" ${checked?"checked":""} onchange="toggleWeek('${key}',this.checked)"> Done</label></div><ul><li>${d[1]}</li><li>${d[2]}</li><li>${d[3]}</li></ul>`;root.appendChild(div)});updateStats()}
+function toggleWeek(key,val){state.weekChecks[key]=val;save();renderWeek()}
+function allWeekDone(){return Object.values(state.weekChecks).filter(Boolean).length}
+function updateStats(){let total=chapterData.reduce((a,s)=>a+s.items.length,0),done=chapterData.reduce((a,s)=>a+s.items.filter(([n])=>state.chapters[s.subject+"|"+n]).length,0);document.getElementById("chapterStat").textContent=Math.round(done/total*100)+"%";document.getElementById("testStat").textContent=state.history.length;const wk=Number(document.getElementById("weekSelect")?.value||1),wd=weeklyPlans[wk].days.filter((d,i)=>state.weekChecks[wk+"|"+i]).length;document.getElementById("streakStat").textContent=wd+"/7";document.getElementById("weekProgress").style.width=wd/7*100+"%";document.getElementById("weekProgressText").textContent=wd+" of 7 weekly tasks done"}
+function loadTest(reset=false){const subj=document.getElementById("testSubject").value,n=Number(document.getElementById("testLength").value);let pool=subj==="Mixed"?bank:bank.filter(q=>q.subject===subj);currentQuestions=pool.slice(0,n);if(currentQuestions.length<n){const other=bank.filter(q=>!currentQuestions.includes(q));currentQuestions=currentQuestions.concat(other.slice(0,n-currentQuestions.length))}currentQuestions=currentQuestions.map(q=>({...q,options:q.o.map((v,i)=>({v,i})).sort(()=>Math.random()-.5)}));lastSubmitted=false;document.getElementById("testHeading").textContent=(subj==="Mixed"?"Mixed PCM":subj)+" practice";document.getElementById("questionCount").textContent=currentQuestions.length+" questions";document.getElementById("testResult").innerHTML="";document.getElementById("submitTest").disabled=false;renderQuiz();if(reset)toast("New test loaded")}
+function renderQuiz(){const root=document.getElementById("quiz");root.innerHTML=currentQuestions.map((q,i)=>`<div class="question"><p>${i+1}. ${q.q}</p><div class="options">${q.options.map(opt=>`<label class="option"><input type="radio" name="q${i}" value="${opt.i}"><span>${opt.v}</span></label>`).join("")}</div><div id="explain${i}" class="muted hidden" style="font-size:12px;margin-top:10px"></div></div>`).join("")}
+function submitTest(){if(lastSubmitted){toast("This test has already been submitted");return}let score=0,answered=0,correct=0,wrong=0;currentQuestions.forEach((q,i)=>{const sel=document.querySelector(`input[name="q${i}"]:checked`),ex=document.getElementById("explain"+i);if(sel){answered++;if(Number(sel.value)===q.a){score++;correct++}else{score--;wrong++}}ex.classList.remove("hidden");ex.innerHTML=`<strong>Answer: ${q.options.find(o=>o.i===q.a).v}</strong> · ${q.e}`});lastSubmitted=true;document.getElementById("submitTest").disabled=true;const pct=Math.round(correct/currentQuestions.length*100);document.getElementById("testResult").innerHTML=`<div class="result"><div class="muted">Practice score · +1 correct, −1 incorrect for this mini-test</div><strong>${score} points</strong><div>${correct} correct · ${wrong} incorrect · ${currentQuestions.length-answered} unanswered</div><div class="progress"><i style="width:${pct}%"></i></div><p>${pct>=80?"Strong work. Review the few mistakes and move on.":pct>=50?"Good start. Re-solve incorrect questions tomorrow.":"Use the explanations to revise concepts, then retry this topic."}</p></div>`;const name=document.getElementById("testName").value.trim()||document.getElementById("testSubject").value+" practice";state.history.unshift({date:new Date().toLocaleDateString(),name,subject:document.getElementById("testSubject").value,score,correct,wrong,total:currentQuestions.length,pct});save();renderProgress()}
+function clearAnswers(){document.querySelectorAll('#quiz input[type="radio"]').forEach(i=>i.checked=false);document.getElementById("testResult").innerHTML="";document.querySelectorAll('[id^="explain"]').forEach(e=>e.classList.add("hidden"));lastSubmitted=false;document.getElementById("submitTest").disabled=!currentQuestions.length}
+function renderProgress(){const total=chapterData.reduce((a,s)=>a+s.items.length,0),done=chapterData.reduce((a,s)=>a+s.items.filter(([n])=>state.chapters[s.subject+"|"+n]).length,0);document.getElementById("progressChapters").textContent=done+"/"+total;document.getElementById("chapterBar").style.width=done/total*100+"%";const avg=state.history.length?Math.round(state.history.reduce((a,t)=>a+t.pct,0)/state.history.length):null,best=state.history.length?Math.max(...state.history.map(t=>t.pct)):null;document.getElementById("averageScore").textContent=avg===null?"—":avg+"%";document.getElementById("bestScore").textContent=best===null?"—":best+"%";const hist=document.getElementById("history");hist.innerHTML=state.history.length?`<div style="overflow:auto"><table class="history"><thead><tr><th>Date</th><th>Test</th><th>Score</th><th>Accuracy</th></tr></thead><tbody>${state.history.map(t=>`<tr><td>${t.date}</td><td>${escapeHTML(t.name)}</td><td>${t.score}/${t.total}</td><td>${t.pct}%</td></tr>`).join("")}</tbody></table></div>`:'<div class="empty">No tests saved yet. Take a test to start your history.</div>';const root=document.getElementById("admissionChecklist");root.innerHTML=admissionItems.map((item,i)=>`<div class="chapter"><input type="checkbox" id="adm${i}" ${state.admission[i]?"checked":""} onchange="state.admission[${i}]=this.checked;save()"><label for="adm${i}"><strong>${item}</strong></label></div>`).join("")}
+function clearHistory(){if(confirm("Clear all saved test history?")){state.history=[];save();renderProgress();toast("Test history cleared")}}
+function exportData(){const blob=new Blob([JSON.stringify(state,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="boardpilot-progress.json";a.click();URL.revokeObjectURL(url);toast("Progress exported")}
+function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function escapeAttr(s){return escapeHTML(s)}
+function escapeJS(s){return s.replace(/\\/g,"\\\\").replace(/'/g,"\\'")}
+renderChapters();renderWeek();renderProgress();updateStats();loadTest();
+</script>
+</body>
+</html>
